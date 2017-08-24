@@ -10,6 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var axe: UIImageView!
+    @IBOutlet weak var wand: UIImageView!
+    @IBAction func hideWant(sender: UIButton) {
+        wand.hidden = true
+    }
+    @IBAction func hideAxe(sender: UIButton) {
+        axe.hidden = true
+    }
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

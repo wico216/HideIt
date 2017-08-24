@@ -1,13 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Hide_It" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,90 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wandLarge.png" translatesAutoresizingMaskIntoConstraints="NO" id="PfP-hh-oM4">
+                                <rect key="frame" x="20" y="195" width="240" height="128"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="axe.png" translatesAutoresizingMaskIntoConstraints="NO" id="JZz-T4-hHV">
+                                <rect key="frame" x="340" y="195" width="240" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hide It" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gr9-ba-HI8">
+                                <rect key="frame" x="125" y="58" width="351" height="71"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="26"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTz-b3-9ly">
+                                <rect key="frame" x="40" y="384" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.15700907710000001" green="0.1483638129" blue="0.20500728630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="17"/>
+                                <state key="normal" title="Hide Wand">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="hideWant:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kwv-7f-CWC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDW-hs-UqX">
+                                <rect key="frame" x="360" y="384" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.15700907708677259" green="0.14836381289152462" blue="0.2050072862694301" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="17"/>
+                                <state key="normal" title="Hide Axe">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="hideAxe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oel-Vw-4Hi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="mDW-hs-UqX" firstAttribute="leading" secondItem="TTz-b3-9ly" secondAttribute="trailing" constant="120" id="0t9-kt-EUy"/>
+                            <constraint firstItem="Gr9-ba-HI8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="38" id="Hth-jt-JnG"/>
+                            <constraint firstItem="JZz-T4-hHV" firstAttribute="width" secondItem="PfP-hh-oM4" secondAttribute="width" id="M0c-8P-hCD"/>
+                            <constraint firstItem="PfP-hh-oM4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="175" id="MTa-Id-epT"/>
+                            <constraint firstItem="JZz-T4-hHV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="175" id="RiD-pf-BgB"/>
+                            <constraint firstItem="Gr9-ba-HI8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="105" id="V9h-Vt-q45"/>
+                            <constraint firstItem="TTz-b3-9ly" firstAttribute="height" secondItem="mDW-hs-UqX" secondAttribute="height" id="YHt-h5-SHJ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JZz-T4-hHV" secondAttribute="bottom" constant="277" id="Z0a-wL-fxb"/>
+                            <constraint firstItem="TTz-b3-9ly" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="bfj-nq-aUz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JZz-T4-hHV" secondAttribute="trailing" id="biD-48-SJD"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Gr9-ba-HI8" secondAttribute="bottom" constant="471" id="ef7-Ae-WfO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PfP-hh-oM4" secondAttribute="bottom" constant="277" id="j9n-LI-kCZ"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="PfP-hh-oM4" secondAttribute="leading" id="jCy-gS-lSs"/>
+                            <constraint firstItem="TTz-b3-9ly" firstAttribute="top" secondItem="PfP-hh-oM4" secondAttribute="bottom" constant="61" id="ldK-LE-zcU"/>
+                            <constraint firstItem="TTz-b3-9ly" firstAttribute="width" secondItem="mDW-hs-UqX" secondAttribute="width" id="mR6-ys-af6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mDW-hs-UqX" secondAttribute="trailing" constant="45" id="oc7-nJ-auu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Gr9-ba-HI8" secondAttribute="trailing" constant="104" id="qaq-Au-PW1"/>
+                            <constraint firstItem="mDW-hs-UqX" firstAttribute="top" secondItem="JZz-T4-hHV" secondAttribute="bottom" constant="61" id="sO0-rv-9us"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="TTz-b3-9ly" secondAttribute="bottom" constant="186" id="tOd-Gw-4ud"/>
+                            <constraint firstItem="JZz-T4-hHV" firstAttribute="leading" secondItem="PfP-hh-oM4" secondAttribute="trailing" constant="80" id="wVS-tu-kd2"/>
+                            <constraint firstItem="JZz-T4-hHV" firstAttribute="height" secondItem="PfP-hh-oM4" secondAttribute="height" id="xLV-j2-E0o"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mDW-hs-UqX" secondAttribute="bottom" constant="186" id="zDi-8K-7Mz"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="axe" destination="JZz-T4-hHV" id="UWe-NH-VKQ"/>
+                        <outlet property="wand" destination="PfP-hh-oM4" id="fgX-0p-Vn7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="100" y="137"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="axe.png" width="512" height="512"/>
+        <image name="wandLarge.png" width="512" height="512"/>
+    </resources>
 </document>
